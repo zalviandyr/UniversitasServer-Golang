@@ -1,0 +1,49 @@
+{
+    "status_code": 200,
+    "message": "Enjoy your result",
+    "mahasiswa_list": [{
+        "id_mahasiswa": "1811081030",
+        "nama": "Zukron Alviandy r",
+        "alamat": {
+            "jalan": "Jln. Umarahmad",
+            "kelurahan": "Pasir putih",
+            "kecamatan": "kabupaten",
+            "kabupaten": "Muara bungo",
+            "provinsi": "Jambi"
+        },
+        "fakultas": "Teknologi Informasi",
+        "jurusan": "TI",
+        "nilai": [{
+            "id_mahasiswa": "1811081030",
+            "id_mata_kuliah": "1111",
+            "mata_kuliah": "Web programming",
+            "nilai": 9.6,
+            "semester": 5
+        }, {
+            "id_mahasiswa": "1811081030",
+            "id_mata_kuliah": "2222",
+            "mata_kuliah": "Android",
+            "nilai": 8,
+            "semester": 5
+        }]
+    }, {
+        "id_mahasiswa": "1811081099",
+        "nama": "Otong Surotong",
+        "alamat": {
+            "jalan": "Jln. Umarahmad",
+            "kelurahan": "Pasir putih",
+            "kecamatan": "kabupaten",
+            "kabupaten": "Muara bungo",
+            "provinsi": "Jambi"
+        },
+        "fakultas": "Teknologi Informasi",
+        "jurusan": "TI",
+        "nilai": [{
+            "id_mahasiswa": "1811081099",
+            "id_mata_kuliah": "2222",
+            "mata_kuliah": "Android",
+            "nilai": 100,
+            "semester": 5
+        }]
+    }]
+}
