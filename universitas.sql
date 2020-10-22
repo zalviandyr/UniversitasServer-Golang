@@ -42,7 +42,7 @@ CREATE TABLE `mahasiswa` (
 
 LOCK TABLES `mahasiswa` WRITE;
 /*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
-INSERT INTO `mahasiswa` VALUES ('1811081030','Zukron Alviandy R','Jln. Umarahmad','Pasir Putih','Rimbo Tengah','Muara Bungo','Jambi','Teknologi Informasi','TI'),('1811081088','Otong Surotong','Jln. Umarahmad','Pasir Putih','Rimbo Tengah','Muara Bungo','Jambi','Teknologi Informasi','TI'),('1811081099','Reita ray','Jln. Umarahmad','Pasir Putih','Rimbo Tengah','Muara Bungo','Jambi','Teknologi Informasi','TI');
+INSERT INTO `mahasiswa` VALUES ('1811081030','Zukron Alviandy R','Jln. Umarahmad','Pasir Putih','Rimbo Tengah','Muara Bungo','Jambi','Teknologi Informasi','Rekayasa Perangkat Lunak'),('1811081088','Otong Surotong','Jln. Umarahmad','Pasir Putih','Rimbo Tengah','Muara Bungo','Jambi','Teknologi Informasi','Teknik Komputer'),('1811081099','Reita ray','Jln. Umarahmad','Pasir Putih','Rimbo Tengah','Muara Bungo','Jambi','Teknologi Informasi','Teknik Komputer');
 /*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `mata_kuliah` (
 
 LOCK TABLES `mata_kuliah` WRITE;
 /*!40000 ALTER TABLE `mata_kuliah` DISABLE KEYS */;
-INSERT INTO `mata_kuliah` VALUES ('1111','Web Programming'),('2222','Android');
+INSERT INTO `mata_kuliah` VALUES ('MK11','Web Programming'),('MK22','Android'),('MK33','Jaringan'),('MK44','Multimedia'),('MK55','Java Programming');
 /*!40000 ALTER TABLE `mata_kuliah` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +81,11 @@ CREATE TABLE `nilai` (
   `id_mahasiswa` varchar(15) NOT NULL,
   `id_mata_kuliah` varchar(15) DEFAULT NULL,
   `nilai` double DEFAULT NULL,
-  `semester` int(5) DEFAULT NULL
+  `semester` int(5) DEFAULT NULL,
+  KEY `nilai_mahasiswa_id_mahasiswa_fk` (`id_mahasiswa`),
+  KEY `nilai_mata_kuliah_id_mata_kuliah_fk` (`id_mata_kuliah`),
+  CONSTRAINT `nilai_mahasiswa_id_mahasiswa_fk` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `nilai_mata_kuliah_id_mata_kuliah_fk` FOREIGN KEY (`id_mata_kuliah`) REFERENCES `mata_kuliah` (`id_mata_kuliah`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -91,7 +95,7 @@ CREATE TABLE `nilai` (
 
 LOCK TABLES `nilai` WRITE;
 /*!40000 ALTER TABLE `nilai` DISABLE KEYS */;
-INSERT INTO `nilai` VALUES ('1811081030','1111',9.6,5);
+INSERT INTO `nilai` VALUES ('1811081030','MK11',9.6,5),('1811081030','MK33',8.6,5),('1811081030','MK22',8,5),('1811081088','MK44',9.4,5),('1811081088','MK55',7,5),('1811081099','MK11',100,5),('1811081099','MK22',100,5),('1811081099','MK55',8.6,5);
 /*!40000 ALTER TABLE `nilai` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-21 11:48:35
+-- Dump completed on 2020-10-22 21:34:55
